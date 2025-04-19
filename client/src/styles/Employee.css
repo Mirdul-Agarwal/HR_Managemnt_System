@@ -1,40 +1,114 @@
+.employees-container {
+  padding: 20px;
+  width: 100%;
+}
 
+.employees-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
 
-  .employees-container {
-    padding: 20px;
-  }
-  
+.employees-header h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.employees-header select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.employees-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.employees-table table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px; /* Enables horizontal scroll on small screens */
+}
+
+.employees-table thead {
+  background-color: #4b007d;
+  color: white;
+}
+
+.employees-table th,
+.employees-table td {
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.employees-table img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.employees-table button {
+  background-color: #4b007d;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
   .employees-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
+
   .employees-header h2 {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
   }
-  
+
   .employees-header select {
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-  
-  .employees-table table {
     width: 100%;
-    border-collapse: collapse;
   }
-  
-  .employees-table thead {
-    background-color: #4b007d;
-    color: white;
+
+  .employees-table table {
+    font-size: 13px;
   }
-  
+
   .employees-table th,
   .employees-table td {
-    padding: 12px 16px;
-    border: 1px solid #ddd;
-    text-align: left;
+    padding: 8px 10px;
   }
-  
+
+  .employees-table button {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .employees-header {
+    align-items: center;
+    text-align: center;
+  }
+
+  .employees-table table {
+    font-size: 12px;
+  }
+
+  .employees-table th,
+  .employees-table td {
+    padding: 6px 8px;
+  }
+
+  .employees-table button {
+    font-size: 11px;
+    padding: 4px 6px;
+  }
+}

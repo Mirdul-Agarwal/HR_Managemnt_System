@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 import { addCandidate } from '../utils/api';
 import '../styles/AddCandidateModal.css';
@@ -84,5 +85,4 @@ const AddCandidateModal = ({ onClose }) => {
 };
 
 export default AddCandidateModal;
-
 

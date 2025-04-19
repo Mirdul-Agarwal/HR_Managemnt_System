@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import "../styles/Leaves.css";
 import AddLeaveModal from "../components/LeaveModal";
