@@ -2,7 +2,9 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api', // your backend base URL
+  // baseURL: 'http://localhost:5000/api', // your backend base URL
+
+  baseURL: 'https://hr-managemnt-system-backend.onrender.com',
 });
 
 // Add token to requests if exists
@@ -38,5 +40,5 @@ export const submitLeave = (leaveFormData) =>
       export const getLeaves = () => API.get('/leaves');
 
       export const updateLeaveStatus = (id, data) =>
-        axios.put(`http://localhost:5000/api/leaves/${id}/status`, data);
+        axios.put(`https://hr-managemnt-system-backend.onrender.com/api/leaves/${id}/status`, data);
       
