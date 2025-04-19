@@ -4,7 +4,7 @@ import axios from 'axios';
 const API = axios.create({
   // baseURL: 'http://localhost:5000/api', // your backend base URL
 
-  baseURL: 'https://hr-managemnt-system-backend.onrender.com',
+  baseURL: 'https://hr-managemnt-system-backend.onrender.com/api',
 });
 
 // Add token to requests if exists
