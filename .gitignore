@@ -1,0 +1,17 @@
+# .gitignore (root)
+
+# Node.js
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Environment
+.env
+client/.env
+server/.env
+
+# Logs
+*.log
+
+# Build
+client/build/

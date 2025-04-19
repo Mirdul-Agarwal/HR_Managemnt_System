@@ -1,0 +1,69 @@
+.candidates-page {
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+}
+
+.candidates-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filters select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-add {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search-add input {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+.add-btn {
+  background-color: #4B0082;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #370062;
+}
+
+.candidates-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.candidates-table thead tr {
+  background-color: #4B0082;
+  color: white;
+  text-align: left;
+}
+
+.candidates-table th, .candidates-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.candidates-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
