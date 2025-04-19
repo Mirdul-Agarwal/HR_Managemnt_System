@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import "../styles/Leaves.css";
 import AddLeaveModal from "../components/LeaveModal";
@@ -50,8 +51,12 @@ const Leaves = () => {
   const currentDate = new Date();
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth(); // 0-based
-
   const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  // Format date as YYYY-MM-DD using local time
+  const formatLocalDate = (date) => {
+    return new Date(date).toLocaleDateString("en-CA");
+  };
 
   return (
     <div className="leaves-container">
@@ -97,7 +102,7 @@ const Leaves = () => {
                       />
                     </td>
                     <td>{leave.name}</td>
-                    <td>{new Date(leave.date).toLocaleDateString()}</td>
+                    <td>{formatLocalDate(leave.date)}</td>
                     <td>{leave.reason}</td>
                     <td>
                       <select
@@ -120,26 +125,31 @@ const Leaves = () => {
 
         <div className="leave-calendar">
           <div className="calendar-header">
-            <h3>Leave Calendar - {currentDate.toLocaleString("default", { month: "long" })} {year}</h3>
+            <h3>
+              Leave Calendar -{" "}
+              {currentDate.toLocaleString("default", { month: "long" })} {year}
+            </h3>
             <button onClick={() => setIsModalOpen(true)}>Add Leave</button>
           </div>
 
           <div className="calendar-box">
             <div className="calendar-grid">
               {Array.from({ length: daysInMonth }, (_, index) => {
-                const date = new Date(year, month, index + 1);
-                const formatted = date.toISOString().split("T")[0];
+                const localDate = new Date(year, month, index + 1);
+                const formattedLocal = localDate.toLocaleDateString("en-CA"); // YYYY-MM-DD
 
                 const leavesOnDay = leaves.filter(
                   (leave) =>
                     leave.status === "Approved" &&
-                    new Date(leave.date).toISOString().split("T")[0] === formatted
+                    formatLocalDate(leave.date) === formattedLocal
                 );
 
                 return (
                   <div
-                    key={formatted}
-                    className={`calendar-day ${leavesOnDay.length > 0 ? "highlight-day" : ""}`}
+                    key={formattedLocal}
+                    className={`calendar-day ${
+                      leavesOnDay.length > 0 ? "highlight-day" : ""
+                    }`}
                   >
                     <div className="day-number">{index + 1}</div>
                     {leavesOnDay.length > 0 && (
