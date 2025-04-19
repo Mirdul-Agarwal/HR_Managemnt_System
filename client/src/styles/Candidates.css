@@ -1,4 +1,4 @@
-.candidates-page {
+/* .candidates-page {
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: 100%;
@@ -66,4 +66,137 @@
 
 .candidates-table tbody tr:hover {
   background-color: #f9f9f9;
+} */
+
+.candidates-page {
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.candidates-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filters select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-add {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-add input {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+.add-btn {
+  background-color: #4B0082;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.add-btn:hover {
+  background-color: #370062;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.candidates-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+.candidates-table thead tr {
+  background-color: #4B0082;
+  color: white;
+  text-align: left;
+}
+
+.candidates-table th,
+.candidates-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+}
+
+.candidates-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.candidates-table button {
+  background-color: #4B0082;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .candidates-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .filters, .search-add {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-add input,
+  .add-btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .candidates-table {
+    font-size: 13px;
+  }
+
+  .candidates-table th,
+  .candidates-table td {
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .candidates-table {
+    font-size: 12px;
+  }
+
+  .candidates-table th,
+  .candidates-table td {
+    padding: 8px 10px;
+  }
 }

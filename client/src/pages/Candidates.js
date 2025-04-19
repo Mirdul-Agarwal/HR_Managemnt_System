@@ -1,6 +1,4 @@
 
-
-
 // import React, { useEffect, useState } from 'react';
 // import '../styles/Candidates.css';
 // import AddCandidateModal from '../components/AddCandidateModal';
@@ -80,6 +78,8 @@
 
 // export default Candidates;
 
+
+
 import React, { useEffect, useState } from 'react';
 import '../styles/Candidates.css';
 import AddCandidateModal from '../components/AddCandidateModal';
@@ -117,37 +117,38 @@ const Candidates = () => {
         </div>
       </div>
 
-      <table className="candidates-table">
-        <thead>
-          <tr>
-            <th>Sr no.</th>
-            <th>Candidate Name</th>
-            <th>Email Address</th>
-            <th>Phone Number</th>
-            <th>Position</th>
-            <th>Status</th>
-            <th>Experience</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {candidates.map((candidate, index) => (
-            <tr key={candidate._id}>
-              <td>{index + 1}</td>
-              <td>{candidate.name}</td>
-              <td>{candidate.email}</td>
-              <td>{candidate.phone}</td>
-              <td>{candidate.position}</td>
-              <td>{candidate.status}</td>
-              <td>{candidate.experience}</td>
-              <td>
-                {/* Placeholder for future action buttons */}
-                <button>View</button>
-              </td>
+      <div className="table-wrapper">
+        <table className="candidates-table">
+          <thead>
+            <tr>
+              <th>Sr no.</th>
+              <th>Candidate Name</th>
+              <th>Email Address</th>
+              <th>Phone Number</th>
+              <th>Position</th>
+              <th>Status</th>
+              <th>Experience</th>
+              <th>Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {candidates.map((candidate, index) => (
+              <tr key={candidate._id}>
+                <td>{index + 1}</td>
+                <td>{candidate.name}</td>
+                <td>{candidate.email}</td>
+                <td>{candidate.phone}</td>
+                <td>{candidate.position}</td>
+                <td>{candidate.status}</td>
+                <td>{candidate.experience}</td>
+                <td>
+                  <button>View</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       {showModal && <AddCandidateModal onClose={() => {
         handleModalToggle();
